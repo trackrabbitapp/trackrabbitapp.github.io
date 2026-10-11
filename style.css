@@ -94,6 +94,9 @@ strong { font-weight: 650; }
   mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / var(--tooth) 100%;
   border-radius: 18px 18px 0 0;
 }
+.receipt { animation: receipt-print 0.9s cubic-bezier(0.3, 0.7, 0.3, 1) 0.15s both; }
+@keyframes receipt-print { from { clip-path: inset(0 0 100% 0); transform: translateY(-12px); } to { clip-path: inset(0 0 0 0); transform: none; } }
+@media (prefers-reduced-motion: reduce) { .receipt { animation: none; } }
 .receipt-title { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin: 0 0 14px; font-size: 1rem; font-weight: 800; letter-spacing: -0.02em; }
 .receipt-title span { font-size: 0.8rem; font-weight: 600; color: var(--text-3); letter-spacing: 0; }
 .receipt dl { margin: 0; }
