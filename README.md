@@ -12,7 +12,7 @@ Publish: edit the files here, then from the repo root run
 It copies `site/` (without `test.txt`) to the `trackrabbitapp/trackrabbitapp.github.io` repo and pushes
 (needs `gh auth login`). Live after 1-2 minutes.
 
-Publisher details (Mobirexa, Germany, info@mobirexa.com) are already filled in; `grep -n '{{' *.html` should print nothing.
+Publisher details (Mobirexa, Germany, info@mobirexa.de) are already filled in; `grep -n '{{' *.html` should print nothing.
 The app reads the site URL and `supportEmail` from `apps/mobile/src/lib/links.ts`.
 
 Update the "Effective" date on a page whenever its text changes. These texts are a careful draft,
