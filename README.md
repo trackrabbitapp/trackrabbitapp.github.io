@@ -3,17 +3,17 @@
 Privacy policy, terms of use and support pages, served by GitHub Pages from an organization repo
 named `<org>.github.io` (site at `https://<org>.github.io/`).
 
-Before publishing, replace the placeholders (macOS sed):
+Publish: edit the files here, then from the repo root run
 
 ```sh
-cd site
-sed -i '' -e 's/{{PUBLISHER_NAME}}/Jane Doe/g' \
-          -e 's/{{PUBLISHER_COUNTRY}}/Germany/g' \
-          -e 's/{{CONTACT_EMAIL}}/support@example.com/g' *.html
-grep -n '{{' *.html   # should print nothing
+./scripts/publish-site.sh "Short message"   # message optional
 ```
 
-Then set `SITE` in `apps/mobile/src/lib/links.ts` to the site URL (and `supportEmail`).
+It copies `site/` (without `test.txt`) to the `trackrabbitapp/trackrabbitapp.github.io` repo and pushes
+(needs `gh auth login`). Live after 1-2 minutes.
+
+Publisher details (Mobirexa, Germany, info@mobirexa.com) are already filled in; `grep -n '{{' *.html` should print nothing.
+The app reads the site URL and `supportEmail` from `apps/mobile/src/lib/links.ts`.
 
 Update the "Effective" date on a page whenever its text changes. These texts are a careful draft,
 not legal advice; have them reviewed by a lawyer when possible.
